@@ -235,9 +235,11 @@ require example:
 require('./foo');
 ```
 
- <!--
- `import` でモジュール参照解決をする場合、ES Modules の仕様としては暗黙的に `.js` を保管してくれたりしないので気をつけましょう。
- -->
+<!--
+
+`import` でモジュール参照解決をする場合、ES Modules の仕様としては暗黙的に `.js` を保管してくれたりしないので気をつけましょう。
+
+-->
 
 import example: you need to add file extensions
 
