@@ -142,6 +142,7 @@ The following algorithm is for the interop between ES Modules and CommonJS.
 簡易フローチャートで書くとこうですね。
 -->
 
+![flow](./images/output.png)
 
 <!--
 この後さらにケースとしてはファイルが循環参照されてたらどうするかとかの話がありますが、一旦そこは置いておきます。
