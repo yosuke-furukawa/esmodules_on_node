@@ -1,0 +1,18 @@
+@startuml
+(*) --> "Determine if file is ES or CJS"
+
+if "if CJS" then
+  --> [true] "Wrap CJS code to bootstrap form"
+  --> "Evaluate as script"
+  --> "Produce a DynamicModuleRecord from module.exports"
+  -right-> (*)
+else
+  -->[false] "ES Modules"
+  --> "Parse for `import`/`export`s and keep record, in order to create bindings"
+  --> "Gather all submodules by performing recursive dependency loading"
+  --> "Connect `import` bindings for all relevant submodules"
+  --> "Evaluate as module"
+  -->[Ending process] (*)
+endif
+
+@enduml

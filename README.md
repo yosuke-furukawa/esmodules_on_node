@@ -137,13 +137,14 @@ The following algorithm describes how interoperability between ES Modules and Co
 ```
 1. Determine if file is an ES Module (ES) or CommonJS (CJS)
 2. If CJS:
-  2.1. Evaluate immediately
+  2.1. Wrap CJS code to bootstrap code
+  2.1. Evaluate as script
   2.2. Produce a DynamicModuleRecord from `module.exports`
 3. If ES:
   3.1. Parse for `import`/`export`s and keep record, in order to create bindings
   3.2. Gather all submodules by performing recursive dependency loading
   3.3. Connect `import` bindings for all relevant submodules
-  3.4. Evaluate
+  3.4. Evaluate as module
 ```
 
 <!--
